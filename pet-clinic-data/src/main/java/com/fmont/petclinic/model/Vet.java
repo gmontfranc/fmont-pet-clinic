@@ -1,4 +1,4 @@
-package fmont.petclinic.model;
+package com.fmont.petclinic.model;
 
 public class Vet extends Person {
 

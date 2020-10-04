@@ -1,11 +1,12 @@
-package services.map;
-import fmont.petclinic.model.Owner;
+package com.fmont.petclinic.services.map;
+import com.fmont.petclinic.model.Owner;
+import com.fmont.petclinic.services.OwnerService;
 import org.springframework.stereotype.Service;
-import services.OwnerService;
 
 import java.util.Set;
 
-public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements OwnerService{
+@Service
+public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements OwnerService {
 
     @Override
     public Owner findByLastName(String lastName) {

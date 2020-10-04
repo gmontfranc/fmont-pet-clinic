@@ -1,11 +1,7 @@
-package services;
-
-import org.springframework.stereotype.Service;
+package com.fmont.petclinic.services;
 
 import java.util.Set;
 
-
-@Service
 public interface CrudService <T,ID>{
 
     Set<T> findAll();
