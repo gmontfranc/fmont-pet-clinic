@@ -1,6 +1,7 @@
 package com.fmont.petclinic.bootstrap;
 
 import com.fmont.petclinic.model.Owner;
+import com.fmont.petclinic.model.Pet;
 import com.fmont.petclinic.model.PetType;
 import com.fmont.petclinic.services.OwnerService;
 import com.fmont.petclinic.services.PetTypeService;
@@ -9,6 +10,8 @@ import com.fmont.petclinic.model.Vet;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 
 @Component
@@ -39,10 +42,30 @@ public class DataLoader implements CommandLineRunner {
 
 
         Owner fred = new Owner("Fred", "Delmotte");
+        fred.setAddress("Woluwe");
+        fred.setCity("Bruxelles");
+        fred.setTelephone("123456789");
 
+        Pet fredsPet = new Pet();
+        fredsPet.setPetType(savedCat);
+        fredsPet.setOwner(fred);
+        fredsPet.setBirthDate(LocalDate.now());
+        fredsPet.setName("Ollie");
+        fred.getPets().add(fredsPet);
         ownerService.save(fred);
 
         Owner merel = new Owner("Merel", "Markusse");
+        merel.setAddress("Grotesteenweg");
+        merel.setCity("Antwerpen");
+        merel.setTelephone("321654");
+
+        Pet merelsPet = new Pet();
+        merelsPet.setPetType(savedDog);
+        merelsPet.setName("Dunno");
+        merelsPet.setBirthDate(LocalDate.now());
+        merelsPet.setOwner(merel);
+
+        merel.getPets().add(merelsPet);
 
         ownerService.save(merel);
 
