@@ -3,7 +3,6 @@ package com.fmont.petclinic.services.springdatajpa;
 import com.fmont.petclinic.model.Owner;
 import com.fmont.petclinic.repositories.OwnerRepository;
 import com.fmont.petclinic.services.OwnerService;
-import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
@@ -41,6 +40,7 @@ public class OwnerSDJpaService implements OwnerService {
 
     @Override
     public Owner save(Owner object) {
+        System.out.println("###################");
         return ownerRepository.save(object);
     }
 
